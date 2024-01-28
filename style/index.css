@@ -1,0 +1,226 @@
+@keyframes slideLeft {
+    from {
+        transform: translate(100%);
+    }to{
+        display: block;
+        transform: translateX(0);
+    }
+}
+@keyframes slideRight {
+    from {
+        /* display: block; */
+        transform: translate(0%);
+    }to{
+        transform: translateX(100%);
+        display: none;
+    }
+}
+
+body {
+    padding: 0%;
+    margin: 0%;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    display: flex;
+    margin-top: -16%;
+    background-color: white;
+}
+
+header img {
+    border-radius: 50%;
+}
+
+.profile {
+    margin: 8.2vh 0% 0% 0%;
+    background-image: url(../assets/image-multivers/IMG-20231223-WA0011.jpg);
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.rounded-button {
+    background-color: #ffa500;
+    /* Couleur orange, vous devrez peut-être ajuster la couleur pour correspondre exactement */
+    color: white;
+    /* Texte blanc */
+    border: none;
+    /* Pas de bordure */
+    padding: 10px 20px;
+    /* Rembourrage haut et bas 10px, rembourrage gauche et droit 20px */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    /* Ajustez selon vos besoins */
+    margin-bottom: -7px;
+    cursor: pointer;
+    border-radius: 5px;
+    /* Coins arrondis */
+    border: 2px solid rgb(112, 112, 112);
+    /* box-shadow: 0 4px #999; */
+}
+
+.description {
+    width: 100%;
+}
+
+@media screen and (max-width: 500px) {
+    header {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    header img {
+        width: 10%;
+        height: 6vh;
+        margin: 3% 5% 0% 5%;
+    }
+
+    header div {
+        /* text-align: right; */
+        margin: 0%;
+        padding: 0%;
+        width: 98%;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .description {
+        display: flex;
+        justify-content: center;
+        font-weight: bold;
+        padding: 1%;
+    }
+
+    .card-list {
+        width: 100%;
+        /* padding: 10%; */
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        align-content: center;
+    }
+
+    .card {
+        width: 100%;
+        height: 20vh;
+        margin: 15px;
+        display: flex;
+        background-color: #F5F5F5;
+        border-radius: 20px;
+        padding: 0px 50px 20px 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-image {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        padding: 10px 20px;
+        border-radius: 15px;
+        background: #E0CBA8;
+    }
+
+    .card-image img {
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    .card-desc {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        padding-left: 20px;
+        width: 35%;
+    }
+
+    .card-desc a {
+        font-size: 2.5vh;
+        margin-bottom: 0%;
+        color: #333;
+        text-align: center;
+        /* text-decoration: underline; */
+    }
+
+    .card-desc p {
+        font-size: 2vh;
+        text-align: center;
+        color: #666;
+    }
+
+    .card-desc button {
+        padding: 5px 0px;
+        width: 70px;
+        margin-top: 1px;
+        background-color: #FFC107;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        font-weight: bold;
+        color: white;
+    }
+
+    .fa-bars {
+        cursor: pointer;
+        z-index: 2;
+        margin-right: 7px;
+    }
+
+    .main {
+        padding-top: 7px;
+        position: relative;
+    }
+
+    .fa-bars,
+    #sidebar {
+        position: absolute;
+        margin-top: 0%;
+    }
+
+    #sidebar {
+        padding-top: 70px;
+        background-color: #FFC107;
+        height: 100vh;
+        border-radius: 10px;
+        width: 100%;
+        display: none;
+        /* transition: 0.6s ease; */
+        /* transform: translateX(100%); */
+    }
+
+    #sidebar div {
+        padding: 20px;
+        margin-top: 10px;
+        margin-left: 45px;
+        border-radius: 10px;
+        width: fit-content;
+        display: flex;
+        font-weight: bolder;
+        font-size: 24px;
+        color: white;
+        /* cursor: pointer; */
+    }
+
+    #sidebar a {
+        text-decoration: none;
+    }
+
+    .active {
+        color: black !important;
+        background-color: rgb(255, 255, 255);
+    }
+
+    #sidebar div i {
+        margin-right: 15px;
+    }
+
+    .fist {
+        margin: 0% -32% 0% 0%;
+    }
+}

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="style/immob.css">
+</head>
+
+<body>
+    <header>
+        <img src="assets/image-multivers/IMG-20231223-WA0007.jpg" alt="logo">
+        <div class="main">
+            <i class=" fa fa-solid fa-bars fa-3x"></i>
+            <div id="sidebar" class="sidebar">
+                <a href="#desc">
+                    <div class="active"><i class="fa-solid fa-house"></i>Accueil</div>
+                </a>
+                <a href="#">
+                    <div><i class="fa-regular fa-address-card"></i></i>Profil</div>
+                </a>
+                <a href="#services">
+                    <div><i class="fa-solid fa-bell-concierge"></i></i>Nos services</div>
+                </a>
+                <hr style="width: 200px;height: 1.5px;background-color: white;">
+                <a href="#">
+                    <div><i class="fa-solid fa-bell"></i>Notification</div>
+                </a>
+                <a href="#">
+                    <div><i class="fa-solid fa-message"></i>Message</div>
+                </a>
+                <hr style="width: 200px;height: 1.5px;background-color: white;">
+                <a href="#">
+                    <div><i class="fa-solid fa-gear"></i>parametre</div>
+                </a>
+                <a href="#">
+                    <div><i class="fa-solid fa-circle-question"></i>Aide</div>
+                </a>
+            </div>
+        </div>
+    </header>
+    <div class="profile">
+    </div>
+    <div class="immob">
+        <center>
+            <hr style="background-color: black; height: 1px; width: 25%;">
+        </center>
+        <div class="immob-title">
+            <div class="title">TITRE MAISON</div>
+            <p>4500 <span>Fcfa</span></p>
+        </div>
+        <div class="subs-title">
+            <div class="subs-title-item">
+                <i></i>
+                <div>Cameroun</div>
+            </div>
+            <div class="subs-title-item">
+                <i></i>
+                <div>5 Pieces</div>
+            </div>
+            <div class="subs-title-item">
+                <i></i>
+                <div>Partager</div>
+            </div>
+        </div>
+        <div class="description">
+            <div class="description-title">
+                Description
+            </div>
+            <div class="description-content">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum voluptatem explicabo animi vitae optio
+                provident et cupiditate temporibus? Quas, dignissimos.
+            </div>
+        </div>
+        <div class="voir">
+            <div class="description-title">
+                Voir <span>+</span>
+            </div>
+            <div class="carousel-container">
+                <div class="carousel-slide">
+                    
+                </div>
+
+                <div class="carousel-navigation">
+                    <button id="prevBtn" >&#10094;</button>
+                    <div id="nothing"></div>
+                    <button id="nextBtn">&#10095;</button>
+                </div>
+            </div>
+        </div>
+        <button type="button">
+            Reservez maintenant
+        </button>
+        <center>
+            <h1>CATEGORIES DES SALLES</h1>
+        </center>
+        <h3>appartement</h3>
+        <div class="carousel-container">
+            <div class="carousel-slide">
+                <div class="carousel-item">
+                    <img src="assets/image-multivers/IMG-20231223-WA0007.jpg" alt="Image 1">
+                    <div class="item-desc">
+                        <div class="item-title">Appartement</div>
+                        <div class="pieces">5 <span>pièces</span></div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/image-multivers/IMG-20231223-WA0008.jpg" alt="Image 2" alt="Image 2">
+                    <div class="item-desc">
+                        <div class="item-title">Appartement</div>
+                        <div class="pieces">5 <span>pièces</span></div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/image-multivers/IMG-20231223-WA0009.jpg" alt="Image 3">
+                    <div class="item-desc">
+                        <div class="item-title">Appartement</div>
+                        <div class="pieces">5 <span>pièces</span></div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/image-multivers/IMG-20231223-WA0007.jpg" alt="Image 1">
+                    <div class="item-desc">
+                        <div class="item-title">Appartement</div>
+                        <div class="pieces">5 <span>pièces</span></div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/image-multivers/IMG-20231223-WA0008.jpg" alt="Image 2" alt="Image 2">
+                    <div class="item-desc">
+                        <div class="item-title">Appartement</div>
+                        <div class="pieces">5 <span>pièces</span></div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/image-multivers/IMG-20231223-WA0009.jpg" alt="Image 3">
+                    <div class="item-desc">
+                        <div class="item-title">Appartement</div>
+                        <div class="pieces">5 <span>pièces</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="carousel-navigation">
+                <!-- <div id="nothing"></div> -->
+                <button id="prevBtn">&#10094;</button>
+                <button id="nextBtn">&#10095;</button>
+            </div>
+        </div>
+    </div>
+    <!-- <a href="?" onClick="window.open('test.html','','width=120,height=50, scrollbars=yes,resizable=yes,left=100,top=300')">fenêtre</a> -->
+</body>
+<script src="js/jquery.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="js/immob.js"></script>
+
+
+</html>
+
+<!-- 
+
+</div> -->
