@@ -1,21 +1,13 @@
-// Variables globales
-const carouselSlide = document.querySelector('.carousel-slide');
-const carouselImages = carouselSlide.querySelectorAll('img');
+function confirmation() {
+  // Afficher la boîte de confirmation
+  document.getElementById("confirmation").classList.remove("hidden");
+  document.getElementById("confirmation").style.display = "block";
 
-// Configuration du carrousel
-const slideInterval = 3000; // Durée d'affichage de chaque image (en millisecondes)
-let currentSlide = 0;
-
-// Fonction pour afficher l'image suivante
-function nextSlide() {
-  currentSlide = (currentSlide + 1) % carouselImages.length;
-  updateSlidePosition();
+  // Empêcher la soumission du formulaire
+  return false;
 }
 
-// Fonction pour mettre à jour la position du carrousel
-function updateSlidePosition() {
-  carouselSlide.style.transform = `translateX(-${currentSlide * 100}%)`;
+function redirection() {
+  // Rediriger vers une autre page
+  window.location.href = "autre_page.html";
 }
-
-// Déclencher le carrousel automatique
-setInterval(nextSlide, slideInterval);

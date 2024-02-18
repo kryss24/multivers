@@ -1,8 +1,9 @@
 <?php
 
 require("config.php");
+$id = (int)$_GET['id'];
 
-$command = mysqli_query($conn, "SELECT * FROM house");
+$command = mysqli_query($conn, "SELECT images FROM pieces WHERE id_house = $id");
 $resultats = mysqli_fetch_all($command);
 
 

@@ -24,6 +24,7 @@
 
 * {
     box-sizing: border-box;
+    text-decoration: none;
 }
 
 body {
@@ -32,11 +33,9 @@ body {
 }
 
 header {
-    position: fixed;
     width: 100%;
     display: flex;
     background-color: white;
-    margin-top: -17%;
 }
 
 header img {
@@ -44,8 +43,7 @@ header img {
 }
 
 .profile {
-    margin: 8.2vh 0% 0% 0%;
-    background-image: url(../assets/image-multivers/IMG-20231223-WA0011.jpg);
+    margin: 5vh 0% 0% 0%;
     background-size: cover;
     background-position: center;
     width: 100%;
@@ -171,9 +169,14 @@ header img {
 
     .subs-title div {
         color: gray;
-        font-size: 14px;
+        font-size: 20px;
         margin-left: 2px;
         font-weight: bold;
+        display: flex;
+        gap: 10px;
+    }
+    .subs-title i{
+        color: #FFC107;
     }
 
     .description,
@@ -213,32 +216,32 @@ header img {
     }
 
 
-    .carousel-container {
+    .voir .carousel-container {
         width: 100%;
         height: max-content;
         overflow: hidden;
         position: relative;
     }
 
-    .carousel-slide {
+    .voir .carousel-slide {
         display: flex;
         transition: transform 0.5s ease-in-out;
     }
 
-    .carousel-item {
+    .voir .carousel-item {
         flex: 0 0 100px;
         /* Largeur d'une image dans le carrousel */
         height: 100%;
     }
 
-    .carousel-item img {
+    .voir .carousel-item img {
         width: 50%;
         height: 50%;
         object-fit: cover;
         border-radius: 20px;
     }
 
-    .carousel-navigation {
+    .voir .carousel-navigation {
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
@@ -248,7 +251,7 @@ header img {
         align-items: center;
     }
 
-    .carousel-navigation button {
+    .voir .carousel-navigation button {
         background: white;
         color: #000;
         border: none;
@@ -257,7 +260,109 @@ header img {
         width: 9%;
         border-radius: 50px;
     }
-    #prevBtn{
+    .voir #prevBtn{
+        display: none;
+    }
+
+
+    .others{
+        margin-top: 15%;
+    }
+    .others h3{
+        margin: 0 5%;
+        color: rgb(212, 195, 195);
+        font-size: 30px;
+    }
+    .others .carousel-container {
+        width: 100%;
+        height: max-content;
+        overflow: hidden;
+        position: relative;
+        padding: 3% 0%;
+    }
+    .others .carousel-slide {
+        display: flex;
+        /* justify-content: space-around; */
+        transition: transform 0.5s ease-in-out;
+    }
+    .others .carousel-item {
+        flex: 0 0 250px;
+        /* Largeur d'une image dans le carrousel */
+        height: 60vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        box-shadow: 0px 4px 10px 0px;
+        margin: 0% 5%;
+        border-radius: 20px;
+    }
+
+    .others .caroussel-img{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .others .carousel-item img {
+        width: 100%;
+        object-fit: cover;
+        border-radius: 20px;
+        /* margin-top: 2%; */
+    }
+
+    .others .item-desc{
+        display: flex;
+        justify-content: space-around;
+        padding: 5% 0%;
+    }
+
+    .others .item-bottom{
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        padding: 0 5% 5% 5%;
+    }
+
+    .item-bottom a div{
+        width: 80px;
+        text-align: center;
+        padding: 10% 0;
+        border-radius: 15px;
+        background-color: #FFC107;
+        color: white;
+    }
+    .item-bottom i{
+        color: #FFC107;
+    }
+
+    .others .carousel-navigation {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .others .carousel-navigation button {
+        background: white;
+        color: #000;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+        width: 9%;
+        border-radius: 50px;
+    }
+
+    .others button{
+        width: max-content; 
+        background-color: white;
+        border: none;
+        margin-top: -5%;
+    }
+
+    .others #prevBtn{
         display: none;
     }
 }
