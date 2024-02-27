@@ -186,7 +186,7 @@ header img {
     #sidebar {
         padding-top: 70px;
         background-color: #FFC107;
-        height: 100vh;
+        height: max-content;
         border-radius: 10px;
         width: 100%;
         display: none;
@@ -196,7 +196,7 @@ header img {
 
     #sidebar div {
         padding: 20px;
-        margin-top: 10px;
+        margin-top: 3px;
         margin-left: 45px;
         border-radius: 10px;
         width: fit-content;
@@ -204,7 +204,6 @@ header img {
         font-weight: bolder;
         font-size: 24px;
         color: white;
-        /* cursor: pointer; */
     }
 
     #sidebar a {
