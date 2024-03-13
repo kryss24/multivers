@@ -1,13 +1,25 @@
-function confirmation() {
-  // Afficher la boîte de confirmation
-  document.getElementById("confirmation").classList.remove("hidden");
-  document.getElementById("confirmation").style.display = "block";
+const modalPhoto = document.getElementById('modal-photo');
+const ouvrirModal = document.getElementById('ouvrir-modal');
+const fermerModal = document.getElementById('fermer-modal');
+const photoInput = document.getElementById('photo-input');
+const apercuImage = document.getElementById('apercu-image');
 
-  // Empêcher la soumission du formulaire
-  return false;
-}
+ouvrirModal.addEventListener('click', () => {
+    modalPhoto.classList.add('afficher');
+});
 
-function redirection() {
-  // Rediriger vers une autre page
-  window.location.href = "autre_page.html";
-}
+fermerModal.addEventListener('click', () => {
+    modalPhoto.classList.remove('afficher');
+});
+
+photoInput.addEventListener('change', () => {
+    const file = photoInput.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function() {
+            apercuImage.style.backgroundImage = `url(${reader.result})`;
+        };
+        reader.readAsDataURL(file);
+    }
+});
+

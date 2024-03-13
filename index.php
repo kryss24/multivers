@@ -19,7 +19,7 @@
                 <a href="#desc">
                     <div class="active"><i class="fa-solid fa-house"></i>Accueil</div>
                 </a>
-                <a href="#">
+                <a href="./pages/profil.php">
                     <div><i class="fa-regular fa-address-card"></i></i>Profil</div>
                 </a>
                 <a href="#services">

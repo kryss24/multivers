@@ -1,7 +1,7 @@
 <?php 
-    include("php/config.php");
+    include("../php/config.php");
     if(isset($_SESSION['user']))
-        header('location: pages/dashboard.php');
+        header('location: ../');
 ?>
 
 <!DOCTYPE html>
@@ -10,8 +10,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>connect</title>
-    <link rel="stylesheet" href="style\fontawesome\css\all.min.css">
-    <link rel="stylesheet" href="style/index.css">
+    <link rel="stylesheet" href="../style/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="../style/style.css">
 </head>
 <body>
     <h1>Se Connecter</h1>
@@ -54,7 +54,7 @@
             </div>
             
         </div>
-        <div class="chek"><input type="checkbox" name="show" id="">Afficher le mot de passe</div>
+        <div class="chek"><input type="checkbox" name="show" id="" disabled>Afficher le mot de passe</div>
         <div class="google forget">
             <a href="#">Mot de passe oublier ?</a>
         </div>
@@ -62,7 +62,7 @@
             <button type="submit">S'inscrire</button>
         </div>
         <div class="redirect">
-            vous n'avez pas de compte ? <a href="pages/connexion.php">Creer un compte</a>
+            vous n'avez pas de compte ? <a href="inscription.php">Creer un compte</a>
         </div>
     </form>
 </body>
@@ -70,12 +70,15 @@
     header('location: php/config.php');
 }*/ ?>
 <script>
-    document.querySelector('input[name="show"]').addEventListener('change', (e)=>{
+    document.querySelector('.chek').addEventListener('click', (e)=>{
         e = e.target;
-        if(e.checked ===true){
+        e = e.querySelector('input[name=\'show\']');
+        if(e.checked === false){
             document.querySelector('input[name="psw"]').type = "text";
+            e.checked = true;
         }else{
             document.querySelector('input[name="psw"]').type = "password";
+            e.checked = false;
         }
     })
 </script>

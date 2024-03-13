@@ -3,35 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulaire de réservation</title>
+    <title>Choisir une photo de profil</title>
+    <link rel="stylesheet" href="js/cropperjs/dist/cropper.min.css">
     <link rel="stylesheet" href="test.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Formulaire de réservation</h1>
-        <form action="traitement.php" method="post" onsubmit="return confirmation()">
-            <label for="nom">Nom</label>
-            <input type="text" id="nom" name="nom" required>
-            <br>
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required>
-            <br>
-            <label for="tel">Téléphone</label>
-            <input type="tel" id="tel" name="tel" required>
-            <br>
-            <label for="date_reservation">Date de réservation</label>
-            <input type="date" id="date_reservation" name="date_reservation" required>
-            <br>
-            <button type="submit">Envoyer</button>
-        </form>
+    <button id="ouvrir-modal">Choisir une photo</button>
 
-        <div id="confirmation" class="hidden">
-            <h2>Votre réservation a été effectuée</h2>
-            <p>Cliquez sur "OK" pour continuer.</p>
-            <button type="button" onclick="redirection()">OK</button>
-        </div>
+    <div id="modal-photo" class="cacher">
+        <h2>Choisir votre photo de profil</h2>
+        <form action="#">
+            <input type="file" id="photo-input" accept="image/png, image/jpeg">
+            <div id="apercu-image"></div>
+            <div class="boutons">
+                <button type="submit">Valider</button>
+                <button type="button" id="fermer-modal">Annuler</button>
+            </div>
+        </form>
     </div>
 
+    <script src="js/cropperjs/dist/cropper.min.js"></script>
     <script src="test.js"></script>
 </body>
 </html>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sélection de fichier</title>
+</head>
+<body>
+  <h1>Sélectionnez une image</h1>
+  <input type="file" id="file-input" accept="image/*" multiple>
+  <br>
+  <img id="output" src="" alt="Image sélectionnée">
+
+  <script>
+    const fileInput = document.getElementById('file-input');
+    const output = document.getElementById('output');
+
+    fileInput.addEventListener('change', (event) => {
+      const files = event.target.files;
+      const reader = new FileReader();
+
+      reader.onload = (event) => {
+        const dataURL = event.target.result;
+        output.src = dataURL;
+      };
+
+      reader.readAsDataURL(files[0]);
+    });
+  </script>
+</body>
+</html> -->
