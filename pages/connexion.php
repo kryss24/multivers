@@ -1,4 +1,5 @@
 <?php 
+    session_start();
     include("../php/config.php");
     if(isset($_SESSION['user']))
         header('location: ../');
@@ -26,7 +27,7 @@
         
                 if ($result->num_rows === 1) {
                     $_SESSION['user'] = $result->fetch_assoc()['user_id'];
-                    header('location: pages/dashboard.php');
+                    header('location: ../');
                 }else{
                     echo "<div class=\"error\"> Le nom d'utilisateur ou le mot de passe est incorrect </div>";
                 }

@@ -3,7 +3,7 @@
         <div class="main">
             <i class=" fa fa-solid fa-bars fa-3x"></i>
             <div id="sidebar" class="sidebar">
-                <a href="#desc">
+                <a href="../">
                     <div class="active"><i class="fa-solid fa-house"></i>Accueil</div>
                 </a>
                 <a href="../pages/profil.php">
@@ -20,9 +20,6 @@
                     <div><i class="fa-solid fa-message"></i>Message</div>
                 </a>
                 <hr style="width: 200px;height: 1.5px;background-color: white;">
-                <a href="#">
-                    <div><i class="fa-solid fa-gear"></i>parametre</div>
-                </a>
                 <a href="#">
                     <div><i class="fa-solid fa-circle-question"></i>Aide</div>
                 </a>

@@ -1,3 +1,5 @@
+<?php session_start();?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -33,9 +35,6 @@
                     <div><i class="fa-solid fa-message"></i>Message</div>
                 </a>
                 <hr style="width: 200px;height: 1.5px;background-color: white;">
-                <a href="#">
-                    <div><i class="fa-solid fa-gear"></i>parametre</div>
-                </a>
                 <a href="#">
                     <div><i class="fa-solid fa-circle-question"></i>Aide</div>
                 </a>
