@@ -106,7 +106,7 @@ document.querySelector("form button").addEventListener("click", (e) => {
     });
 
 
-    if (/[^a-zA-Z\s]/.test(nameInput.value) || nameInput.value == " ") {
+    if (!/[a-zA-Z]/.test(nameInput.value) || nameInput.value == " ") {
         nameInput.classList.add("isFaild");
         nameInput.classList.remove("isSucced");
         verified = "name";
@@ -122,6 +122,12 @@ document.querySelector("form button").addEventListener("click", (e) => {
         telInput.classList.remove("isSucced");
         if (verified == "")
             verified = "tel";
+    }
+    if(reservationInput.value == "") {
+        reservationInput.classList.add("isFaild");
+        reservationInput.classList.remove("isSucced");
+        if (verified == "")
+            verified = "date";
     }
 
     switch (verified) {
@@ -141,7 +147,16 @@ document.querySelector("form button").addEventListener("click", (e) => {
             payementMode.focus();
             break;
         default:
-            insererRervation(nameInput.value,mailInput.value,telInput.value,reservationInput.value,payementMode.value)
+            insererRervation(nameInput.value,mailInput.value,telInput.value,reservationInput.value,payementMode.value);
+            let number = "+237697105519"
+            let houseName = document.querySelector(".informationHouse .name");
+            let housePrice = document.querySelector(".informationHouse .price");
+            let paymentMode = document.getElementById("moyen_paiement");
+            const msg = encodeURIComponent('Hello, je viens reserver l\'appartement au nom de *' + houseName.innerText + '* et j\'accepte le prix de *' + housePrice.innerText + '* FCFA via le mode de paiement suivant: '+ paymentMode.value);
+            const url = "https://wa.me/" + number + "?text="+ msg;
+            window.open(url);
+            removeAll();
+            window.location.href = "../ ";
             break;
     }
 });

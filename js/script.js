@@ -23,13 +23,12 @@ document.addEventListener('click', (event) => {
 });
 
 // Ajoute un écouteur d'événements pour les clics sur l'élément menue
-menue.addEventListener("click", () => {
+menue.addEventListener("click", (e) => {
+  e.preventDefault;
   // Vérifie si mynav est masqué
   if (mynav.style.display === "none") {
     // Si c'est le cas, affiche mynav, change sa transition et sa transformation, et change la couleur de menue en blanc
     mynav.style.display = "block";
-    mynav.style.transition = "transform 0.6s ease";
-    mynav.style.transform = "translateX(0%)";
     menue.style.color = "white";
     if(document.querySelector(".voir")){
       document.querySelector(".voir").style.visibility = "hidden";
@@ -37,8 +36,6 @@ menue.addEventListener("click", () => {
     
   } else {
     // Sinon, masque mynav, change sa transition, sa transformation, sa durée de transition et la couleur de menue en noir
-    mynav.style.transform = "translateX(100%)";
-    mynav.style.transitionDuration = "0.8s";
     mynav.style.display = "none";
     menue.style.color = "black";
     if(document.querySelector(".voir")){
@@ -46,17 +43,17 @@ menue.addEventListener("click", () => {
     }
     
   }
-  // Ajoute un écouteur d'événements pour le défilement de la fenêtre
-  window.addEventListener('scroll', () => {
-    // Masque mynav, change sa transformation, sa durée de transition, sa visibilité et la couleur de menue en noir
-    mynav.style.transform = "translateX(100%)";
-    mynav.style.transitionDuration = "0.8s";
-    mynav.style.display = "none";
-    menue.style.color = "black";
-    if(document.querySelector(".voir")){
-      document.querySelector(".voir").style.visibility = "visible";
-    }
-  });
+  // // Ajoute un écouteur d'événements pour le défilement de la fenêtre
+  // window.addEventListener('scroll', () => {
+  //   // Masque mynav, change sa transformation, sa durée de transition, sa visibilité et la couleur de menue en noir
+  //   mynav.style.transform = "translateX(100%)";
+  //   mynav.style.transitionDuration = "0.8s";
+  //   mynav.style.display = "none";
+  //   menue.style.color = "black";
+  //   if(document.querySelector(".voir")){
+  //     document.querySelector(".voir").style.visibility = "visible";
+  //   }
+  // });
 });
 
 // Fonction pour rediriger l'utilisateur vers une page spécifique en fonction de la valeur de a

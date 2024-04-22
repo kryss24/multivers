@@ -6,5 +6,5 @@
     $date = $_GET["date"];
     $choice = $_GET["choice"];
 
-    $query = mysqli_query($conn, "INSERT INTO")
+    // $query = mysqli_query($conn, "INSERT INTO")
 ?>

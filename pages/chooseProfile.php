@@ -8,6 +8,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../style/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="../js/cropperjs/dist/cropper.min.css">
     <link rel="stylesheet" href="../style/profile.css">
 </head>
@@ -59,6 +60,11 @@
 
 <script src="../js/cropperjs/dist/cropper.min.js"></script>
     <script>
+        const fileInput = document.getElementById("photo-input");
+        const icon = document.createElement("i");
+        icon.classList.add("fa", "fa-file");
+        fileInput.parentNode.insertBefore(icon, fileInput);
+
         const modalPhoto = document.getElementById('modal-photo');
         const ouvrirModal = document.getElementById('ouvrir-modal');
         const fermerModal = document.getElementById('fermer-modal');
@@ -71,7 +77,6 @@
         var crooper;
         function Mycropper() {
             const apercuImage = document.getElementById('apercu-image');
-            console.log(apercuImage);
                 cropper = new Cropper(apercuImage, {  
                 aspectRatio: 1 / 1, // Ratio de l'image rognée
                 viewMode: 1, // Mode de visualisation (1: normal)
@@ -85,7 +90,6 @@
         }
 
 
-        const fileInput = document.getElementById('photo-input');
 
         // Fonction pour enregistrer l'image rognée en PNG
         function enregistrerImage(crooper) {
@@ -115,8 +119,17 @@
         const boutonEnregistrer = document.getElementById('enregistrer-image');
         boutonEnregistrer.addEventListener('click', enregistrerImage);
         if(document.getElementById('apercu-image').src != ""){
+            document.querySelector('button[type="submit"]').style.display = "none";
+            document.querySelector('#enregistrer-image').style.display = "block";
             Mycropper();
+            
         }
+
+        document.querySelector('#photo-input').addEventListener('change',(e) =>{
+            e.preventDefault();
+            document.querySelector('button[type="submit"]').style.display = "block";
+            document.querySelector('#enregistrer-image').style.display = "none";
+        })
 
     </script>
 </body>

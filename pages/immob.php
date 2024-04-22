@@ -17,7 +17,7 @@
     <div class="profile profile-imob">
     </div>
     <div class="immob">
-        <center>
+    <center>
             <hr style="background-color: black; height: 1px; width: 25%;">
         </center>
         <div class="immob-title">

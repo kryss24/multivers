@@ -1,7 +1,7 @@
 <header>
         <img src="../assets/image_multivers/multivers.jpg" alt="logo">
         <div class="main">
-            <i class=" fa fa-solid fa-bars fa-3x"></i>
+            <i class=" fa fa-solid fa-bars fa-2x"></i>
             <div id="sidebar" class="sidebar">
                 <a href="../">
                     <div class="active"><i class="fa-solid fa-house"></i>Accueil</div>
@@ -20,6 +20,7 @@
                     <div><i class="fa-solid fa-message"></i>Message</div>
                 </a>
                 <hr style="width: 200px;height: 1.5px;background-color: white;">
+                
                 <a href="#">
                     <div><i class="fa-solid fa-circle-question"></i>Aide</div>
                 </a>

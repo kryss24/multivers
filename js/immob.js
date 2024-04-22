@@ -37,17 +37,18 @@ function recupererMaison(a) {
         // Traitement des données reçues
         donnees = JSON.parse(response);
         var nombreAleatoire = Math.floor(Math.random() * (donnees.length - 0));
-        document.getElementById("reservez").setAttribute("onclick", "reserver("+ donnees[nombreAleatoire][0] +")")
+        document.getElementById("reservez").setAttribute("onclick", "reserver("+ donnees[nombreAleatoire][0] +")");
         document.getElementsByClassName("profile-imob")[0].style.backgroundImage = "url('../assets/" + donnees[nombreAleatoire][4] + "'  )";
-        document.querySelector(".immob-title .title").innerText = "" + donnees[nombreAleatoire][1]
-        document.querySelector(".immob-title p").innerHTML = donnees[nombreAleatoire][3] + "<span> Fcfa</span>"
-        document.querySelectorAll(".subs-title-item div")[1].innerText = donnees[nombreAleatoire][2] + " Pieces"
-        document.querySelector(".description-content").innerText = donnees[nombreAleatoire][5]
+        document.querySelector(".immob-title .title").innerText = "" + donnees[nombreAleatoire][1];
+        document.querySelector(".immob-title p").innerHTML = donnees[nombreAleatoire][3] + "<span> Fcfa</span>";
+        document.querySelectorAll(".subs-title-item div")[0].innerText = donnees[nombreAleatoire][9];
+        document.querySelectorAll(".subs-title-item div")[1].innerText = donnees[nombreAleatoire][2] + " Pieces";
+        document.querySelector(".description-content").innerText = donnees[nombreAleatoire][5];
         effectuerRequeteAjax('../php/pieces.php?id=' + donnees[nombreAleatoire][0], 'GET', null, function (response) {
           // Traitement des données reçues
           images = JSON.parse(response);
           document.querySelectorAll('.voir .carousel-item').forEach(element => {
-            element.remove()
+            element.remove();
           });
           addImage(images);
           images_lenght = images.length
@@ -61,10 +62,10 @@ function recupererMaison(a) {
         // Traitement des données reçues
         images = JSON.parse(response);
         document.querySelectorAll('.voir .carousel-item').forEach(element => {
-          element.remove()
+          element.remove();
         });
         addImage(images);
-        images_lenght = images.length
+        images_lenght = images.length;
       });
       break
 
@@ -85,10 +86,11 @@ function Maison() {
   // Modification des éléments HTML avec les données de la maison actuelle
   document.getElementById("reservez").setAttribute("onclick", "reserver("+ donnees[curentHouse][0] +")")
   document.getElementsByClassName("profile")[0].style.backgroundImage = "url('../assets/" + donnees[curentHouse][4] + "'  )";
-  document.querySelector(".immob-title .title").innerText = "" + donnees[curentHouse][1]
-  document.querySelector(".immob-title p").innerHTML = donnees[curentHouse][3] + "<span> Fcfa</span>"
-  document.querySelectorAll(".subs-title-item div")[1].innerText = donnees[curentHouse][2] + " Pieces"
-  document.querySelector(".description-content").innerText = donnees[curentHouse][5]
+  document.querySelector(".immob-title .title").innerText = "" + donnees[curentHouse][1];
+  document.querySelector(".immob-title p").innerHTML = donnees[curentHouse][3] + "<span> Fcfa</span>";
+  document.querySelectorAll(".subs-title-item div")[0].innerText = donnees[curentHouse][9];
+  document.querySelectorAll(".subs-title-item div")[1].innerText = donnees[curentHouse][2] + " Pieces";
+  document.querySelector(".description-content").innerText = donnees[curentHouse][5];
   recupererMaison(1);// Appel pour récupérer les images de la maison actuelle
   curentHouse++;
 }

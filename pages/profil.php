@@ -10,9 +10,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    
     <link rel="stylesheet" href="../style/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="../style/immob.css">
     <link rel="stylesheet" href="../style/profile.css">
+    <link rel="icon" href="../assets/icons/NH-logo.ico">
 </head>
 
 <body>
@@ -23,7 +25,7 @@
             <div class="container">
         <div class="profile-image">
             <img src="../assets/profiles/<?php echo $_SESSION['userProfile']; ?>" id="image">
-            <i class="fa-solid fa-camera fa-3x"></i>
+            <i class="fa-solid fa-camera fa-2x"></i>
         </div>
         <div class="profile-name">
             <div class="name">
@@ -98,13 +100,9 @@
     </footer>
     <?php
         }else{
-   ?>
-        <div class="sign-in-up">
-            <a href="connexion.php"><div class="sign-in">Sign in</div></a>
-            <hr>
-            <a href="inscription.php"><div class="sign-up">Sign Up</div></a>
-        </div>
-    <?php } ?>
+           header("location: connexion.php");
+        } 
+    ?>
     <script src="../js/profile.js"></script>
 </body>
 <!-- http://localhost/multivers/pages/profil.php -->

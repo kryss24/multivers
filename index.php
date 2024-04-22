@@ -1,4 +1,7 @@
-<?php session_start();?>
+<?php 
+    session_start();
+    header('location: pages/immob.php');
+?>
 
 <!DOCTYPE html>
 <html lang="en">

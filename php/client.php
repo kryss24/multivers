@@ -11,7 +11,7 @@ $mail = $_GET["mail"];
 $firstLetter = substr($nom, 0,1);
 
 // Insérer l'utilisateur dans la base de données
-$query = mysqli_query($conn, "INSERT INTO users values(0,'$nom','$user','Client','$psw', '$firstLetter', '$mail')");
+$query = mysqli_query($conn, "INSERT INTO users values(0,'$nom','$user','$psw', '$firstLetter', '$mail')");
 
 // Sélectionner l'utilisateur pour récupérer son ID
 $command = mysqli_query($conn, "SELECT * FROM users WHERE matricule = '$user'");

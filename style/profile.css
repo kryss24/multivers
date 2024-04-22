@@ -16,16 +16,24 @@ body {
 #image,
 #output {
     height: 25vh;
-    width: 170px;
+    width: 50%;
     border-radius: 100px;
     object-fit: cover;
 }
 
 .profile-image .fa-camera {
     position: absolute;
-    margin-left: 40%;
-    margin-top: 40%;
+    margin-left: 38%;
+    margin-top: 35%;
+    font-size: 60px;
 }
+@media screen and (max-width: 360px) {
+    .profile-image .fa-camera{
+        margin-left: 35%;
+        margin-top: 35%;
+        font-size: 40px;
+    }
+} 
 
 #ouvrir-modal {
     margin: 10px;
@@ -161,6 +169,8 @@ body {
     border: none;
     border-bottom: 2px solid black;
     height: 35%;
+    outline: none;
+    border-bottom: block;
 }
 .form-card div{
     width: 100%;
@@ -237,8 +247,11 @@ body {
     border-color: #fff transparent transparent #fff;
     animation: rotate 2s linear infinite;
   }
+.form-card {
+    animation: slideInDown .5s ease-in-out;
+}
   
-  @keyframes rotate {
+@keyframes rotate {
     from {
       transform: rotate(0deg);
     }
@@ -246,4 +259,16 @@ body {
       transform: rotate(360deg);
     }
   }
-  
+#enregistrer-image{
+    display:none;
+}
+@keyframes slideInDown {
+    from {
+      transform: translateY(-10%); /* Start off-screen above */
+      opacity: 0.5; /* Completely hidden */
+    }
+    to {
+      transform: translateY(0); /* Animate to the top */
+      opacity: 1; /* Fully visible */
+    }
+}

@@ -64,13 +64,17 @@ button {
 
 .pay label {
   width: max-content;
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;   
 }
 
 .select{
   display: flex;
   height: 100%;
   justify-content: space-between;
+  /* align-items: center; */
 }
 
 select {
@@ -125,4 +129,18 @@ i.fas.fa-chevron-down {
 }
 .isSucced{
   box-shadow: 0 0 3px 5px rgb(11, 200, 11);
+}
+
+@media screen and (max-width: 360px) {
+  form button {
+    width: 110px;
+  }
+  .pay label,.pay select {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .pay label,.pay select {
+    font-size: 14px;
+  }
 }

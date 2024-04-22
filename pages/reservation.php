@@ -10,12 +10,17 @@
     <link rel="stylesheet" href="../style/reservation.css">
     <?php
         include("../php/config.php");
-        $house = $_GET['house'];
+        $houseId = $_GET['house'];
     
-        $piece = mysqli_query($conn,"SELECT * FROM house WHERE id=$house");
-        $piece = mysqli_fetch_assoc($piece);
+        $house = mysqli_query($conn,"SELECT * FROM house WHERE id=$houseId");
+        $house = mysqli_fetch_assoc($house);
     ?>
 </head>
+
+    <div class="informationHouse" style="display: none">
+        <div class="name"><?php echo $house['title'];?></div>
+        <div class="price"><?php echo $house['price'];?></div>
+    </div>
 
 <body>
     <?php include("../php/headerImmob.php") ?>
