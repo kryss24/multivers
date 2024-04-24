@@ -106,23 +106,23 @@ document.querySelector("form button").addEventListener("click", (e) => {
     });
 
 
-    if (!/[a-zA-Z]/.test(nameInput.value) || nameInput.value == " ") {
-        nameInput.classList.add("isFaild");
-        nameInput.classList.remove("isSucced");
-        verified = "name";
-    }
-    if (!/^([a-zA-Z0-9._-]+)@([a-zA-Z0-9.-]+)\.([a-zA-Z]{2,6})$/.test(mailInput.value) || mailInput.value == " ") {
-        mailInput.classList.add("isFaild");
-        mailInput.classList.remove("isSucced");
-        if (verified == "")
-            verified = "mail"
-    }
-    if (!/^6\d{8}$/.test(telInput.value) || nameInput.value == " ") {
-        telInput.classList.add("isFaild");
-        telInput.classList.remove("isSucced");
-        if (verified == "")
-            verified = "tel";
-    }
+    // if (!/[a-zA-Z]/.test(nameInput.value) || nameInput.value == " ") {
+    //     nameInput.classList.add("isFaild");
+    //     nameInput.classList.remove("isSucced");
+    //     verified = "name";
+    // }
+    // if (!/^([a-zA-Z0-9._-]+)@([a-zA-Z0-9.-]+)\.([a-zA-Z]{2,6})$/.test(mailInput.value) || mailInput.value == " ") {
+    //     mailInput.classList.add("isFaild");
+    //     mailInput.classList.remove("isSucced");
+    //     if (verified == "")
+    //         verified = "mail"
+    // }
+    // if (!/^6\d{8}$/.test(telInput.value) || nameInput.value == " ") {
+    //     telInput.classList.add("isFaild");
+    //     telInput.classList.remove("isSucced");
+    //     if (verified == "")
+    //         verified = "tel";
+    // }
     if(reservationInput.value == "") {
         reservationInput.classList.add("isFaild");
         reservationInput.classList.remove("isSucced");
@@ -131,15 +131,15 @@ document.querySelector("form button").addEventListener("click", (e) => {
     }
 
     switch (verified) {
-        case "name":
-            nameInput.focus();
-            break;
-        case "mail":
-            mailInput.focus();
-            break;
-        case "tel":
-            telInput.focus();
-            break;
+        // case "name":
+        //     nameInput.focus();
+        //     break;
+        // case "mail":
+        //     mailInput.focus();
+        //     break;
+        // case "tel":
+        //     telInput.focus();
+        //     break;
         case "date":
             reservationInput.focus();
             break;
@@ -147,8 +147,8 @@ document.querySelector("form button").addEventListener("click", (e) => {
             payementMode.focus();
             break;
         default:
-            insererRervation(nameInput.value,mailInput.value,telInput.value,reservationInput.value,payementMode.value);
-            let number = "+237697105519"
+            // insererRervation(nameInput.value,mailInput.value,telInput.value,reservationInput.value,payementMode.value);
+            let number = "+237697102596"
             let houseName = document.querySelector(".informationHouse .name");
             let housePrice = document.querySelector(".informationHouse .price");
             let paymentMode = document.getElementById("moyen_paiement");

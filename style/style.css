@@ -59,13 +59,12 @@ p span{
 }
 .btn-group button{
     border: none;
-    background-color: transparent;
     box-shadow: 0 0 15px 3px rgba(0, 0, 0, 0.2);
     padding: 3%;
     width: 40%;
-    color: #ffa500;
     border-radius: 10px;
     font-weight: bold;
+    background-color: rgba(84, 83, 83, 0.148);
 }
 .cross{
     width: max-content;
@@ -94,4 +93,12 @@ p span{
     font-size: 16px;
     display: flex;
     align-items: center;
+}
+
+.contrat{
+    font-size: 10px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.white{
+    color: #ffa500;
 }

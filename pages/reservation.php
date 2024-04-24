@@ -29,12 +29,12 @@
         <h1>Entrez vos informations</h1>
         <form action="reservation.php?house=<?php echo $house; ?>" method="post">
             <div class="input">
-                <label for="nom">Nom</label>
+                <!-- <label for="nom">Nom</label>
                 <input type="text" id="nom" name="nom" required>
                 <label for="email">Email</label>
                 <input type="email" id="email" name="email" required>
                 <label for="tel">Téléphone</label>
-                <input type="tel" id="tel" name="tel" required>
+                <input type="tel" id="tel" name="tel" required> -->
                 <label for="date_reservation">Date de réservation</label>
                 <input type="date" id="date_reservation" name="date_reservation" required>
             </div>

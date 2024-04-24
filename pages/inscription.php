@@ -54,11 +54,14 @@
                 <input type="password" name="cpsw" id="">
             </div>
         </div>
+        <div class="contrat">
+            <input type="checkbox" name="" id=""> J'ai lue et j'accepte les <a href="http://">termes de contrats</a> et la <a href="http://">politique de confidentialiter</a>
+        </div>
         <div class="google">
             <a href="#">Se connecter avec <img src="../assets/icons/icons8_google_48px.png" alt="" srcset=""></a>
         </div>
         <div class="btn-group">
-            <button type="button">S'inscrire</button>
+            <button type="button" disabled>S'inscrire</button>
         </div>
     </form>
 </body>
@@ -149,7 +152,21 @@
             });
         }
     })
+    document.querySelector(".contrat").addEventListener("change", (e) =>{
+        e.preventDefault();
 
+        if(document.querySelector(".btn-group > button").disabled == true) {
+            document.querySelector(".btn-group > button").disabled = false;
+            document.querySelector(".btn-group > button").classList.add("white");
+            document.querySelector(".btn-group > button").style.backgroundColor = "white";
+        }else{
+            document.querySelector(".btn-group > button").classList.remove("white");
+            document.querySelector(".btn-group > button").disabled = true;
+            document.querySelector(".btn-group > button").style.backgroundColor = "rgba(84, 83, 83, 0.148)";
+        }
+
+        
+    })
 </script>
 
 </html>
