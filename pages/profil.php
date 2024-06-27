@@ -23,8 +23,15 @@
         if(isset($_SESSION['user'])){
     ?>
             <div class="container">
-        <div class="profile-image">
-            <img src="../assets/profiles/<?php echo $_SESSION['userProfile']; ?>" id="image">
+            <?php 
+                if(strpos($_SESSION['userProfile'], '@') == false){
+            ?>
+            <div class="profile-image">
+                <i class="fas fa-<?php echo strtolower($_SESSION['userProfile']); ?> fa-5x letter" style = "color: white;"></i>
+            <?php }else { ?>
+            <div class="profile-image">
+               <img src="../assets/profiles/<?php echo $_SESSION['userProfile']; ?>" id="image"> 
+            <?php } ?>
             <i class="fa-solid fa-camera fa-2x"></i>
         </div>
         <div class="profile-name">

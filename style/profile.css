@@ -14,7 +14,8 @@ body {
 }
 
 #image,
-#output {
+#output,
+.letter {
     height: 25vh;
     width: 50%;
     border-radius: 100px;
@@ -27,6 +28,12 @@ body {
     margin-top: 35%;
     font-size: 60px;
 }
+@media screen and (min-width: 480px) {
+    .letter{
+        font-size: 8em;
+    }
+}
+
 @media screen and (max-width: 360px) {
     .profile-image .fa-camera{
         margin-left: 35%;
@@ -271,4 +278,10 @@ body {
       transform: translateY(0); /* Animate to the top */
       opacity: 1; /* Fully visible */
     }
+}
+.letter{
+    background: linear-gradient(to right, blue, purple 70%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

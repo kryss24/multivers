@@ -22,6 +22,40 @@
 <body>
     <?php include("../php/headerImmob.php") ?>
     <center><div class="profile" style="background-image: url('../assets/<?php echo $houseBd["image"]; ?>');"></div></center>
+
+    <div class="immob-title">
+        <div class="title"><?php echo $houseBd['title'] ?></div>
+        <p> <?php echo $houseBd['price'] ?> <span>Fcfa</span></p>
+    </div>
+    <div class = "star">
+        <?php  
+            for ($index = 0; $index < 5; $index++) {
+                if($index < $houseBd['note']){
+                  ?>
+                  <i class="fas fa-star" style="color: #FFC107;"></i>
+                  <?php
+                }else{
+                  ?>
+                  <i class="far fa-star"></i>
+                  <?php
+                }
+              }
+        ?>
+    </div>
+    <div class="subs-title">
+        <div class="subs-title-item">
+            <i class="fa-solid fa-city"></i>
+            <div>Cameroun</div>
+        </div>
+        <div class="subs-title-item">
+            <i class="fa-solid fa-house-crack"></i>
+            <div>5 Pieces</div>
+        </div>
+        <div class="subs-title-item">
+            <i class="fa-solid fa-share-nodes"></i>
+            <div>Partager</div>
+        </div>
+    </div>
     <div class="voir">
         <div class="carousel-container">
             <div class="carousel-slide">
@@ -42,25 +76,6 @@
                 <div id="nothing"></div>
                 <button id="nextBtn">&#10095;</button>
             </div>
-        </div>
-    </div>
-
-    <div class="immob-title">
-        <div class="title"><?php echo $houseBd['title'] ?></div>
-        <p> <?php echo $houseBd['price'] ?> <span>Fcfa</span></p>
-    </div>
-    <div class="subs-title">
-        <div class="subs-title-item">
-            <i class="fa-solid fa-city"></i>
-            <div>Cameroun</div>
-        </div>
-        <div class="subs-title-item">
-            <i class="fa-solid fa-house-crack"></i>
-            <div>5 Pieces</div>
-        </div>
-        <div class="subs-title-item">
-            <i class="fa-solid fa-share-nodes"></i>
-            <div>Partager</div>
         </div>
     </div>
     <div class="description">

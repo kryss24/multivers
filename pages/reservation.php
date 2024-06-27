@@ -18,6 +18,7 @@
 </head>
 
     <div class="informationHouse" style="display: none">
+        <div class="id"><?php echo $houseId; ?></div>
         <div class="name"><?php echo $house['title'];?></div>
         <div class="price"><?php echo $house['price'];?></div>
     </div>

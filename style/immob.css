@@ -9,6 +9,10 @@
     }
 }
 
+.image {
+    width: 8%;
+}
+
 @keyframes slideRight { 
     from {
         transform: translate(100%);
@@ -47,7 +51,7 @@ header img {
     background-size: cover;
     background-position: center;
     width: 100%;
-    height: 40vh;
+    height: 50vh;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -179,10 +183,11 @@ header img {
     align-items: center;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 1080px) {
     header {
         display: flex;
         justify-content: space-between;
+        height: 8vh;
     }
 
     header img {
@@ -197,6 +202,35 @@ header img {
         width: 98%;
         display: flex;
         justify-content: flex-end;
+    }
+
+    .filtre{
+        width: 100%;
+        height: 6vh;
+        margin-top: 2vh;
+        display: flex;
+        align-items: center;
+        overflow-x: scroll;
+        overflow-y: hidden;
+    }
+    .filtre .filtre-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        /* font-size: 14px; */
+        /* margin: 0 10%; */
+        /* width: au; */
+        height: 100%;
+        height: 100%;
+    }
+    .filtre-item i{
+        font: size 14px;
+    }
+    .filtre-item > div{
+        text-align: center;
+        font-size:  12px;
+        width: 120px;
     }
 
     .fa-bars {
@@ -268,6 +302,10 @@ header img {
         align-items: center;
         padding: 0% 5%;
         font-size: 18px;
+    }
+    .star{
+        padding: 0% 5% 2% 5%;
+        margin-top: -3%;
     }
 
     .title {
@@ -384,4 +422,50 @@ header img {
         display: none;
     }
 }
-/*267*/
+
+.show-filter {
+    width: 100%;
+}
+.show-filter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5% 0;
+    gap: 15px;
+}
+.displayNone{
+    display: none;
+}
+.filter-item {
+    width: 70%;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0px 4px 10px 0px;
+    margin: 0% 10%;
+    border-radius: 20px;
+}
+.filter-item img{
+    width: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+.filter-item .item-desc{
+    display: flex;
+    justify-content: space-around;
+    padding: 5% 0%;
+}
+.filter-item .item-bottom{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0 5% 5% 5%;
+}
+
+.close {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}

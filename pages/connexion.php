@@ -60,7 +60,7 @@
             <a href="#">Mot de passe oublier ?</a>
         </div>
         <div class="btn-group">
-            <button type="submit">S'inscrire</button>
+            <button type="submit">Se Connecter</button>
         </div>
         <div class="redirect">
             vous n'avez pas de compte ? <a href="inscription.php">Creer un compte</a>

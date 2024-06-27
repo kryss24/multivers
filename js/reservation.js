@@ -66,26 +66,19 @@ function effectuerRequeteAjax(url, methode, donnees, callback) {
 }
 
 // Recuperation des donnee lier a la Maison
-function insererRervation(name,mail,number,date,option) {
-    effectuerRequeteAjax('../php/ajouterReservation.php?name='+ name +'&mail='+ mail +'&tel='+ number +'&date='+ date +'&choice='+ option, 'GET', null, function (response) {
-        // Traitement des données reçues
-        donnees = JSON.parse(response);
-        var nombreAleatoire = Math.floor(Math.random() * (donnees.length - 0));
-        document.getElementById("reservez").setAttribute("onclick", "reserver(" + donnees[nombreAleatoire][0] + ")")
-        document.getElementsByClassName("profile-imob")[0].style.backgroundImage = "url('../assets/" + donnees[nombreAleatoire][4] + "'  )";
-        document.querySelector(".immob-title .title").innerText = "" + donnees[nombreAleatoire][1]
-        document.querySelector(".immob-title p").innerHTML = donnees[nombreAleatoire][3] + "<span> Fcfa</span>"
-        document.querySelectorAll(".subs-title-item div")[1].innerText = donnees[nombreAleatoire][2] + " Pieces"
-        document.querySelector(".description-content").innerText = donnees[nombreAleatoire][5]
-        effectuerRequeteAjax('../php/pieces.php?id=' + donnees[nombreAleatoire][0], 'GET', null, function (response) {
-            // Traitement des données reçues
-            images = JSON.parse(response);
-            document.querySelectorAll('.voir .carousel-item').forEach(element => {
-                element.remove()
-            });
-            addImage(images);
-            images_lenght = images.length
-        });
+function insererRervation(option, date, price, houseName, payementMode, houseId) {
+    effectuerRequeteAjax('../php/ajouterReservation.php?&date=' + date + '&choice=' + option + '&price=' + price + '&houseId=' + houseId + '&payementMode=' + payementMode, 'GET', null, function (response) {
+
+        if (response != 0) {
+            let number = "+237697102596"
+            const msg = encodeURIComponent('Hello, je viens reserver l\'appartement au nom de *' + houseName + '* et j\'accepte le prix de *' + price + '* FCFA via le mode de paiement suivant: *' + payementMode + '* le *' + date + '*\n\n Numero ID: Reservation'+response);
+            const url = "https://wa.me/" + number + "?text=" + msg;
+            window.open(url);
+            // removeAll();
+            // window.location.href = "../ ";
+        }else{
+            alert("Something went wrong");
+        }
 
     });
 }
@@ -123,7 +116,7 @@ document.querySelector("form button").addEventListener("click", (e) => {
     //     if (verified == "")
     //         verified = "tel";
     // }
-    if(reservationInput.value == "") {
+    if (reservationInput.value == "") {
         reservationInput.classList.add("isFaild");
         reservationInput.classList.remove("isSucced");
         if (verified == "")
@@ -147,16 +140,11 @@ document.querySelector("form button").addEventListener("click", (e) => {
             payementMode.focus();
             break;
         default:
-            // insererRervation(nameInput.value,mailInput.value,telInput.value,reservationInput.value,payementMode.value);
-            let number = "+237697102596"
-            let houseName = document.querySelector(".informationHouse .name");
             let housePrice = document.querySelector(".informationHouse .price");
+            let houseName = document.querySelector(".informationHouse .name");
             let paymentMode = document.getElementById("moyen_paiement");
-            const msg = encodeURIComponent('Hello, je viens reserver l\'appartement au nom de *' + houseName.innerText + '* et j\'accepte le prix de *' + housePrice.innerText + '* FCFA via le mode de paiement suivant: '+ paymentMode.value);
-            const url = "https://wa.me/" + number + "?text="+ msg;
-            window.open(url);
-            removeAll();
-            window.location.href = "../ ";
+            let houseId = document.querySelector(".informationHouse .id");
+            insererRervation(payementMode.value, reservationInput.value, housePrice.innerText, houseName.innerText, paymentMode.value, houseId.innerText);
             break;
     }
 });
