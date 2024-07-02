@@ -26,7 +26,7 @@ document.addEventListener('click', (event) => {
 menue.addEventListener("click", (e) => {
   e.preventDefault;
   // Vérifie si mynav est masqué
-  if (mynav.style.display === "none") {
+  if (mynav.style.display !== "block") {
     // Si c'est le cas, affiche mynav, change sa transition et sa transformation, et change la couleur de menue en blanc
     mynav.style.display = "block";
     menue.style.color = "white";

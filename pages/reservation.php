@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="../style/immob.css">
     <link rel="stylesheet" href="../style/reservation.css">
     <?php
+        session_start();
+        if(!isset($_SESSION['user']))
+            header("location: ../pages/connexion.php");
         include("../php/config.php");
         $houseId = $_GET['house'];
     

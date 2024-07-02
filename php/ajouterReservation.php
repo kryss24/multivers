@@ -1,5 +1,6 @@
 <?php
 session_start();
+
     include("config.php");
     $date = $_GET["date"];
     $choice = $_GET["choice"];

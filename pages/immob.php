@@ -199,6 +199,7 @@
                             <i class="fas fa-xmark fa-3x"></i>
                         </div>
     </div>
+    <?php //include("mobirise/index.php") ?>
     <!-- <a href="?" onClick="window.open('test.html','','width=120,height=50, scrollbars=yes,resizable=yes,left=100,top=300')">fenêtre</a> -->
 </body>
 <script src="../js/script.js"></script>

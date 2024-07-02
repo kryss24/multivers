@@ -55,7 +55,7 @@
             </div>
         </div>
         <div class="contrat">
-            <input type="checkbox" name="" id=""> J'ai lue et j'accepte les <a href="http://">termes de contrats</a> et la <a href="http://">politique de confidentialiter</a>
+            <input type="checkbox" name="" id=""> J'ai lue et j'accepte les <a href="../doc/politique.html">termes de contrats</a> et la <a href="http://">politique de confidentialiter</a>
         </div>
         <div class="google">
             <a href="#">Se connecter avec <img src="../assets/icons/icons8_google_48px.png" alt="" srcset=""></a>

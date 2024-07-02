@@ -67,7 +67,7 @@ function effectuerRequeteAjax(url, methode, donnees, callback) {
 
 // Recuperation des donnee lier a la Maison
 function insererRervation(option, date, price, houseName, payementMode, houseId) {
-    effectuerRequeteAjax('../php/ajouterReservation.php?&date=' + date + '&choice=' + option + '&price=' + price + '&houseId=' + houseId + '&payementMode=' + payementMode, 'GET', null, function (response) {
+    effectuerRequeteAjax('../php/ajouterReservation.php?date=' + date + '&choice=' + option + '&price=' + price + '&houseId=' + houseId + '&payementMode=' + payementMode, 'GET', null, function (response) {
 
         if (response != 0) {
             let number = "+237697102596"

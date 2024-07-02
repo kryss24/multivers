@@ -1,6 +1,6 @@
 <?php
     $conn = mysqli_connect("localhost","root","","multivers");
-    function verifySuperUser($id){
+    function verifySuperUser($id, $conn){
         $query = $conn->prepare('SELECT user_id FROM users WHERE user_id = ? AND groupe = ?');
         $query->bind_param('ss',$id,'SuperAdmin');
         $query->execute();
