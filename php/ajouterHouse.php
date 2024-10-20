@@ -7,7 +7,7 @@
     $long = $_GET["longitude"];
     $lat = $_GET["latitude"];
 
-    $query = mysqli_query($conn, "INSERT INTO housesubmited VALUES(0, '$nom', '$tel', '$long', '$lat')");
+    $query = mysqli_query($conn, "INSERT INTO housesubmited VALUES(0, '$nom', '$tel', '$long', '$lat', 'no-configure')");
 
     $query = mysqli_insert_id($conn);
     header('Content-Type: application/json');

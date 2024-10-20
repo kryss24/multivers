@@ -202,21 +202,24 @@
         <div class="second display-none">
             <h3>Information sur la Localisation de la maison</h3>
             <div class="contain">
+                <div class="btn-div">
+                    <button id="getMyPosition">Get Local Position</button>
+                </div>
                 <div class="input-groupe">
                     <div class="label-grp">
                         <label for="">Longitude</label>
                         <i class="fa-solid fa-star-of-life" style="color: #ff0000;"></i>
                     </div>
-                    <input type="text" name="long">
+                    <input type="text" name="long" id="longitude">
                 </div>
                 <div class="input-groupe">
                     <div class="label-grp">
                         <label for="">Latitude</label>
                         <i class="fa-solid fa-star-of-life" style="color: #ff0000;"></i>
                     </div>
-                    <input type="text" name="larg">
+                    <input type="text" name="larg" id="latitude">
                 </div>
-                <div class="btn-div">
+                <div class="btn-div navig">
                     <button type="button" class="btn-first">Retour</button>
                     <button type="button" class="btn-first">Presenter</button>
                 </div>
@@ -236,7 +239,7 @@
     </div>
     <script>
         const first = document.querySelector(".first button");
-        const seconds = document.querySelectorAll(".second button");
+        const seconds = document.querySelectorAll(".second .btn-first");
         const third = document.querySelector(".third button");
         const form1 = document.querySelector(".first");
         const form2 = document.querySelector(".second");
@@ -386,6 +389,38 @@
             }
             xhr.send(donnees);
         }
+
+        //Get myu position
+        document.getElementById("getMyPosition").addEventListener("click", function() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition, showError);
+            } else {
+                alert("Geolocation is not supported by this browser.");
+            }
+        });
+
+        function showPosition(position) {
+            document.getElementById("latitude").value = position.coords.latitude;
+            document.getElementById("longitude").value = position.coords.longitude;
+        }
+
+        function showError(error) {
+            switch(error.code) {
+                case error.PERMISSION_DENIED:
+                    alert("User denied the request for Geolocation.");
+                    break;
+                case error.POSITION_UNAVAILABLE:
+                    alert("Location information is unavailable.");
+                    break;
+                case error.TIMEOUT:
+                    alert("The request to get user location timed out.");
+                    break;
+                case error.UNKNOWN_ERROR:
+                    alert("An unknown error occurred.");
+                    break;
+            }
+        }
+
     </script>
 </body>
 

@@ -94,10 +94,19 @@
         <button type="button" id="reservez" style="width: 85%;" onclick="reserver(<?php echo $house; ?>)">
             Reservez maintenant
         </button>
+        <p style="width: 85%; margin: 5px 0;"> - Ou -</p>
+        <button type="button" style="width: 85%;margin-bottom: 20px;" id="localisation">
+            Obtenir La Localisation
+        </button>
     </center>
 </body>
 <script src="../js/script.js"></script>
 <script src="../js/jquery.js"></script>
 <script src="../js/immob.js"></script>
+<script>
+    document.querySelector("#localisation").addEventListener("click", (e) => {
+        alert("All done")
+    })
+</script>
 
 </html>
