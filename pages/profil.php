@@ -1,5 +1,6 @@
 <?php
     session_start();
+    $_SESSION['pages'] = "Profile";
     include("../php/config.php");
 
 ?>

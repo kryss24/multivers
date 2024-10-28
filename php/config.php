@@ -17,4 +17,3 @@
         $_SESSION["userProfile"] = $query[4];
         $_SESSION["userEmail"] = $query[5];
     }
-?>
