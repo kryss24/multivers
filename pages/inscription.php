@@ -1,5 +1,5 @@
-<?php 
-    include("../php/config.php");
+<?php
+include("../php/config.php");
 ?>
 
 <!DOCTYPE html>
@@ -11,13 +11,37 @@
     <title>connect</title>
     <link rel="stylesheet" href="../style/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="../style/style.css">
+
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        form {
+            box-shadow: 5px 5px 5px 4px black;
+            width: 40%;
+            padding: 20px;
+        }
+
+        @media screen and (max-width: 400px) {
+            form {
+                width: 85%;
+                padding: 20px;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <div class="cross">&cross;</div>
-    <h1>Se Connecter</h1>
-    <p>Bienvenue sur <span>immob</span></p>
     <form action="" method="post">
+        <div class="cross">&cross;</div>
+        <center>
+            <h1>Inscription</h1>
+            <p>Bienvenue sur <span>immob</span></p>
+        </center>
         <div class="message-query"></div>
         <div class="input-group">
             <label for="nom">Nom</label>
@@ -77,7 +101,7 @@
     function effectuerRequeteAjax(url, methode, donnees, callback) {
         var xhr = new XMLHttpRequest();
         // Définition de la fonction de rappel pour gérer la réponse de la requête AJAX
-        xhr.onreadystatechange = function () {
+        xhr.onreadystatechange = function() {
             if (xhr.readyState === XMLHttpRequest.DONE) {
                 if (xhr.status === 200) {
                     callback(xhr.responseText);
@@ -92,6 +116,7 @@
         }
         xhr.send(donnees);
     }
+
     function verifyInputs() {
         const numbers = /[0-9]/;
         const specialChars = /[\W]/;
@@ -138,7 +163,7 @@
     }
 
     document.querySelector("button").addEventListener('click', () => {
-        var user_id = "<?php if(isset($_POST['user_id']))echo $_SESSION['user_id']; ?>";
+        var user_id = "<?php if (isset($_POST['user_id'])) echo $_SESSION['user_id']; ?>";
         var nom = document.querySelector("input[name='nom']");
         var user = document.querySelector("input[name='user']");
         var psw = document.querySelector("input[name='psw']");
@@ -146,26 +171,26 @@
         var mail = document.querySelector("input[name='mail']");
         console.log(name.value, user.value, psw.value, cpsw.value, mail.value)
         if (verifyInputs()) {
-            effectuerRequeteAjax("../php/client.php?nom=" + nom.value.split('\'').join(' ') +"&user=" + user.value +"&psw=" + psw.value +"&mail=" + mail.value, 'GET', null, function (response) {
-                    // Traitement des données reçues
-                    window.location.href = "../";
+            effectuerRequeteAjax("../php/client.php?nom=" + nom.value.split('\'').join(' ') + "&user=" + user.value + "&psw=" + psw.value + "&mail=" + mail.value, 'GET', null, function(response) {
+                // Traitement des données reçues
+                window.location.href = "../";
             });
         }
     })
-    document.querySelector(".contrat").addEventListener("change", (e) =>{
+    document.querySelector(".contrat").addEventListener("change", (e) => {
         e.preventDefault();
 
-        if(document.querySelector(".btn-group > button").disabled == true) {
+        if (document.querySelector(".btn-group > button").disabled == true) {
             document.querySelector(".btn-group > button").disabled = false;
             document.querySelector(".btn-group > button").classList.add("white");
             document.querySelector(".btn-group > button").style.backgroundColor = "white";
-        }else{
+        } else {
             document.querySelector(".btn-group > button").classList.remove("white");
             document.querySelector(".btn-group > button").disabled = true;
             document.querySelector(".btn-group > button").style.backgroundColor = "rgba(84, 83, 83, 0.148)";
         }
 
-        
+
     })
 </script>
 

@@ -6,7 +6,8 @@ $_SESSION['pages'] = "Accueil";
 
 <!DOCTYPE html>
 <html lang="en">
-
+<!-- concernant le filtre par type, il doivent etre cliquable.
+J'aimerais que tu ajoute d'autre paramettre de filtre comme par exemple: le pris, les foncttionnalite supplementaire(wifi, piscine, etc...), ville, etc... -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
